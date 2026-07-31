@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Context Orchestrator"
+  short_description: "连续图片提示词、出图、改图与参考资产选择的上下文编排"
+  default_prompt: "Use $image-context-orchestrator to route this multi-turn image prompt, generation, or editing request."

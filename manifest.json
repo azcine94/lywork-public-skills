@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "package": "lywork-public-skills",
+  "version": "0.1.0",
+  "installTarget": "~/.pi/agent/public-skills",
+  "skills": [
+    {
+      "name": "az-extract-frame-img",
+      "directory": "az-extract-frame-img"
+    },
+    {
+      "name": "chinese-thinking",
+      "directory": "chinese-thinking"
+    },
+    {
+      "name": "image-context-orchestrator",
+      "directory": "image-context-orchestrator"
+    },
+    {
+      "name": "imagegen",
+      "directory": "imagegen"
+    },
+    {
+      "name": "quill-image-prompt-director-pro",
+      "directory": "quill-image-prompt-director-pro"
+    }
+  ]
+}

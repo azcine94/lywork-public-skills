@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quill Image Prompt Director Pro"
+  short_description: "将场景想法、参考图或修改诉求转换成高质量专业生图提示词"
+  default_prompt: "Use $quill-image-prompt-director-pro to turn my scene idea into a polished AI image prompt."

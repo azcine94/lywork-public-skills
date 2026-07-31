@@ -1,0 +1,4 @@
+interface:
+  display_name: "az-extract-frame-img"
+  short_description: "提取视频首尾帧、确认风格图，并输出双语 Seedance 视频提示词"
+  default_prompt: "使用 $az-extract-frame-img 提取视频首尾帧、确认风格图，并为原视频生成中英双语 Seedance 提示词。"

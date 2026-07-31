@@ -1,0 +1,36 @@
+name: Release public skills
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate and package Skills
+        run: node scripts/build-release.mjs "$GITHUB_REF_NAME"
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create "$GITHUB_REF_NAME"
+          dist/lywork-public-skills.zip
+          dist/lywork-public-skills.zip.sha256
+          dist/release-manifest.json
+          --verify-tag
+          --generate-notes
+          --title "LYWork Public Skills $GITHUB_REF_NAME"
