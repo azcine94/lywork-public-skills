@@ -6,7 +6,7 @@ LYWork/PiDeck 随安装包提供、并可通过 GitHub Releases 持续更新的�
 
 | Skill | 用途 |
 | --- | --- |
-| `az-extract-frame-img` | 提取视频首尾帧并生成图片、Seedance 工作流提示词 |
+| `az-extract-frame-img` | 按用户点名提取首帧、尾帧或具体帧号，并按需生成参考图与 Seedance 工作流提示词 |
 | `chinese-thinking` | 中文思考和中文输出约束 |
 | `image-context-orchestrator` | 连续图片生成与编辑时的上下文编排 |
 | `imagegen` | 识别图片生成/编辑意图并调用 LYWork 图片工具 |
