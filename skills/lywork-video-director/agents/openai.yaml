@@ -1,0 +1,4 @@
+interface:
+  display_name: "LYWork Video Director"
+  short_description: "将文字、参考图、首尾帧和视频素材编排为可执行的画布视频节点与提示词"
+  default_prompt: "Use $lywork-video-director to create or run a Canvas video workflow from my prompt and references."
