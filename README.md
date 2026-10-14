@@ -1,16 +1,21 @@
 # LYWork Public Skills
 
-LYWork/PiDeck 随安装包提供、并可通过 GitHub Releases 持续更新的公共 Skill 仓库。
+LYWork 随安装包提供、并可通过 GitHub Releases 持续更新的公共 Skill 仓库。
 
 ## 当前包含
 
 | Skill | 用途 |
 | --- | --- |
 | `az-extract-frame-img` | 按用户点名提取首帧、尾帧或具体帧号，并按需生成参考图与 Seedance 工作流提示词 |
-| `chinese-thinking` | 中文思考和中文输出约束 |
+| `lywork-document-reader` | 读取与分析本地 PDF、DOCX、XLSX、PPTX |
 | `image-context-orchestrator` | 连续图片生成与编辑时的上下文编排 |
 | `imagegen` | 识别图片生成/编辑意图并调用 LYWork 图片工具 |
 | `quill-image-prompt-director-pro` | 专业图片提示词生成与修改 |
+| `lywork-video-director` | 视频创作与导演工作流 |
+| `image-multi-angle-prompter` | 多角度机位图片提示词 |
+
+`0.6.7` 移除 `chinese-thinking`，保留以上 7 个公共 Skill。内部 `lywork-canvas-director`
+不进入公共包。保留本仓库已发布的指定帧抽取修复，并同步 LYWork 随包的其他最新内容。
 
 ## 安装约定
 
@@ -40,6 +45,12 @@ scripts/build-release.mjs
 `az-extract-frame-img` 依赖 Python、FFmpeg 和 FFprobe。图片相关 Skill 依赖 LYWork 提供的 `ly_image` 工具。
 
 ## 发布新版本
+
+日常以 LYWork 仓库 `resources/builtin-skills/` 及 `.lywork-public-skills.json` 为维护入口。
+先比较两边文件和提交历史，将公共仓库独立修复合回随包，再同步清单中的完整目录集合。
+不能仅凭包版本号判断某个 Skill 的内容新旧，也不能只发布本次改动的一个 Skill。
+两边包版本、Skill 清单和完整目录内容保持一致；详细流程见 LYWork 仓库
+`docs/public-skills-maintenance.md`。
 
 1. 修改或新增 `skills/<skill-name>/`。
 2. 同步更新 `manifest.json` 中的版本与 Skill 清单。

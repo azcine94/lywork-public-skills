@@ -1,16 +1,15 @@
 {
   "schemaVersion": 1,
   "package": "lywork-public-skills",
-  "version": "0.1.1",
-  "installTarget": "~/.pi/agent/public-skills",
+  "version": "0.6.7",
   "skills": [
+    {
+      "name": "lywork-document-reader",
+      "directory": "lywork-document-reader"
+    },
     {
       "name": "az-extract-frame-img",
       "directory": "az-extract-frame-img"
-    },
-    {
-      "name": "chinese-thinking",
-      "directory": "chinese-thinking"
     },
     {
       "name": "image-context-orchestrator",
@@ -21,8 +20,17 @@
       "directory": "imagegen"
     },
     {
+      "name": "lywork-video-director",
+      "directory": "lywork-video-director"
+    },
+    {
       "name": "quill-image-prompt-director-pro",
       "directory": "quill-image-prompt-director-pro"
+    },
+    {
+      "name": "image-multi-angle-prompter",
+      "directory": "image-multi-angle-prompter"
     }
-  ]
+  ],
+  "installTarget": "~/.pi/agent/public-skills"
 }
