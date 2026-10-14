@@ -46,11 +46,18 @@ scripts/build-release.mjs
 
 ## 发布新版本
 
-日常以 LYWork 仓库 `resources/builtin-skills/` 及 `.lywork-public-skills.json` 为维护入口。
-先比较两边文件和提交历史，将公共仓库独立修复合回随包，再同步清单中的完整目录集合。
-不能仅凭包版本号判断某个 Skill 的内容新旧，也不能只发布本次改动的一个 Skill。
-两边包版本、Skill 清单和完整目录内容保持一致；详细流程见 LYWork 仓库
-`docs/public-skills-maintenance.md`。
+日常可以直接在本仓库的 `skills/<skill-name>/` 新增、修改或删除公共 Skill，
+同步维护 `manifest.json` 的完整清单并提升包版本。删除时同时移除目录和清单条目。
+公共包可以独立发布，不需要等待 LYWork 应用发版；客户端检查更新后会应用新内容。
+
+公共包发布后，将清单中的完整目录集合及版本同步回 LYWork 仓库的
+`resources/builtin-skills/` 和 `.lywork-public-skills.json`，供下一次应用发版使用。
+同步前比较两边文件和提交历史，保留两边独立修复；不能仅凭包版本号判断内容新旧，
+也不能把单个 Skill 当作完整更新包发布。内部 `lywork-canvas-director` 不参与公共同步。
+
+如果 Skill 依赖尚未发布的应用工具或协议，需要等待支持它的应用版本，或先提供兼容处理。
+退役 Skill 的旧目录迁移修复属于应用代码，公共包本身无法更新主进程。
+应用侧验证和迁移细节见 LYWork 仓库 `docs/public-skills-maintenance.md`。
 
 1. 修改或新增 `skills/<skill-name>/`。
 2. 同步更新 `manifest.json` 中的版本与 Skill 清单。
